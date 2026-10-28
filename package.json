@@ -1,0 +1,55 @@
+{
+  "name": "dsh-ask-first",
+  "version": "1.6.0",
+  "description": "DSH 插件：让 Agent 在替用户做决定前先提问（先问后干）。三层：常驻提问纪律（每请求一条提醒）、连续变更未提问提醒、不可逆操作硬闸；自带设置页。",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yinghan-123/dsh-ask-first.git"
+  },
+  "homepage": "https://github.com/yinghan-123/dsh-ask-first#readme",
+  "bugs": {
+    "url": "https://github.com/yinghan-123/dsh-ask-first/issues"
+  },
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "ask-first",
+    "ask-user-question",
+    "policy",
+    "dshm"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@deepseek-ai/schemastery": "^3.18.5"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "compatibility": {
+      "dsh": ">=0.2.0-rc.1 <0.3.0-0"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings"
+      ]
+    }
+  }
+}

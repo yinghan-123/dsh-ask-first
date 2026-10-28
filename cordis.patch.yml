@@ -1,0 +1,8 @@
+# dsh-ask-first bundle patch。
+#
+# 只插入本插件自身，不改写任何官方装载行。
+# 生效条件：本包出现在 profile 的 `dsh.profile.bundles` 里（或用户行区手工插入
+# 同内容的 `- id: ask-first` / `name: dsh-ask-first`）。
+- insert:
+    - id: ask-first
+      name: dsh-ask-first
